@@ -39,6 +39,7 @@ mylist: [
       },
     ]
 }
+
 The top row will be the ‘My List’ row and will display the titles included in ‘mylist’ array. The
 second row will be the recommendation row which will display the titles included in
 ‘recommendations’ array.
