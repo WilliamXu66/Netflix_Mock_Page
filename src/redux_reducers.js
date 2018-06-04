@@ -50,19 +50,25 @@ function updateReducer(state, action) {
       for (let i = 0; i < state.recommendations.length; i++) {
         if (state.recommendations[i].id === action.payload) {
           return {
+              ...state,
             mylist: [...state.mylist, state.recommendations[i]],
-            recommendations: [
-              ...state.recommendations.slice(0, i),
-              ...state.recommendations.slice(i + 1)
-            ]
           };
         }
       }
       return state;
 
     case "DELETE_FROM_FAVORITE":
+    let i;
       for (let i = 0; i < state.mylist.length; i++) {
         if (state.mylist[i].id === action.payload) {
+            for(let j = 0; j < state.recommendations.length; j++){
+                if(state.recommendations[j].id === action.payload){
+                    return {
+                        ...state,
+                        mylist: [...state.mylist.slice(0, i), ...state.mylist.slice(i + 1)]
+                      };
+                }
+            }
           return {
             ...state,
             mylist: [...state.mylist.slice(0, i), ...state.mylist.slice(i + 1)],
