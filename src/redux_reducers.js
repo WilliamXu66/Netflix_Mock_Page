@@ -49,6 +49,11 @@ function updateReducer(state, action) {
     case "ADD_TO_FAVORITE":
       for (let i = 0; i < state.recommendations.length; i++) {
         if (state.recommendations[i].id === action.payload) {
+            for(let j = 0; j < state.mylist.length; j++){
+                if(state.mylist[j].id === action.payload){
+                    return state;
+                }
+            }
           return {
               ...state,
             mylist: [...state.mylist, state.recommendations[i]],
