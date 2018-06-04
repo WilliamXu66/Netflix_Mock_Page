@@ -9,21 +9,19 @@ class App extends Component {
     return (
       <div className="App">
         <div className="displayAll">
-
           <MyCollection
+            title="My List"
             list={this.props.mylist}
             method={this.props.deleteFromFavorite}
             buttonName="Remove"
           />
 
-          <div className="breakLine" />
-
           <MyCollection
+            title="Recommand"
             list={this.props.recommendations}
             method={this.props.addToFavorite}
             buttonName="Add"
           />
-          
         </div>
       </div>
     );

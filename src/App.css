@@ -49,6 +49,12 @@
   margin: 5px;
 }
 
+.title {
+  text-align: left;
+  width: 800px;
+  margin: 0 auto;
+}
+
 p {
   color: white;
 }
@@ -58,10 +64,15 @@ button {
   margin: 0 auto;
   width: 180px;
   height: 30px;
+  border-radius: 0%;
 }
 
 .node:hover button {
   display: block;
+}
+
+button:hover {
+  color: red;
 }
 
 /* width */
