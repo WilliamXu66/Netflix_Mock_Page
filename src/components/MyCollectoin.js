@@ -6,7 +6,7 @@ class MyCollectoin extends Component {
     return (
       <div>
         <div className="title">
-          <p>{this.props.title}</p>
+          <h3>{this.props.title}</h3>
         </div>
         <div className="myCollection">
           {this.props.list.map((e, key) => {
